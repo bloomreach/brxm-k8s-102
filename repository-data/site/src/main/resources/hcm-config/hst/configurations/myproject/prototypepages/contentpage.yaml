@@ -1,0 +1,13 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/myproject/hst:prototypepages/contentpage:
+      jcr:primaryType: hst:component
+      jcr:mixinTypes: ['hst:prototypemeta']
+      hst:displayname: Simple Content Page
+      hst:primarycontainer: main
+      hst:referencecomponent: hst:abstractpages/base
+      /main:
+        jcr:primaryType: hst:containercomponent
+        hippo:identifier: 650d8977-7dba-45e9-a229-65df55734662
+        hst:label: Content Page Main
+        hst:xtype: hst.vbox

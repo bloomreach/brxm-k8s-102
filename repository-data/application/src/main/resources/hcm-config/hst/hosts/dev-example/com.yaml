@@ -1,0 +1,10 @@
+definitions:
+  config:
+    /hst:platform/hst:hosts/dev-example/com:
+      jcr:primaryType: hst:virtualhost
+      /example:
+        jcr:primaryType: hst:virtualhost
+        /hst:root:
+          jcr:primaryType: hst:mount
+          hst:ismapped: false
+          hst:namedpipeline: WebApplicationInvokingPipeline

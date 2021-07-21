@@ -19,8 +19,8 @@
     <Logger name="org.onehippo" level="error"/>
 
     <!-- audit logging -->
-    <Logger additivity="false" name="org.hippoecm.repository.api.Workflow" level="info"/>
-    <Logger additivity="false" name="org.onehippo.audit" level="info"/>
+    <Logger name="org.hippoecm.repository.api.Workflow" level="info"/>
+    <Logger name="org.onehippo.audit" level="info"/>
 
     <!-- index repair logging -->
     <Logger name="org.hippoecm.repository.jackrabbit.IndexRepairer" level="info"/>

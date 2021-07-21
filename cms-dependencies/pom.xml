@@ -45,5 +45,9 @@
       <artifactId>hippo-enterprise-package-cms-dependencies</artifactId>
       <type>pom</type>
     </dependency>
+    <dependency>
+      <groupId>com.onehippo.cms7</groupId>
+      <artifactId>hippo-addon-lucene-export</artifactId>
+    </dependency>
   </dependencies>
 </project>

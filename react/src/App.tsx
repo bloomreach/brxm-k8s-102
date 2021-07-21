@@ -15,35 +15,32 @@
  */
 
 import React from 'react';
-import axios, {
-    AxiosAdapter,
-    AxiosBasicCredentials,
-    AxiosProxyConfig,
-    AxiosTransformer, CancelToken,
-    Method,
-    ResponseType
-} from 'axios';
+import axios from 'axios';
 import {Link, RouteComponentProps} from 'react-router-dom';
 import {BrComponent, BrPage, BrPageContext} from '@bloomreach/react-sdk';
 import {Banner, Content, Menu, NewsList} from './components';
 
+
 export default function App(props: RouteComponentProps) {
-
     const serverId = new URLSearchParams(props.location.search).get('server-id');
-    console.log(' serverid', serverId);
-    document.cookie = 'SERVERID=' + serverId;
+    const token = new URLSearchParams(props.location.search).get('token');
+    console.log('serverid =', serverId);
+    console.log('token =', token);
 
-    const axiosInstance = serverId ? axios.create({
+    const axiosInstance = (serverId && token) ? axios.create({
         withCredentials: true,
     }) : axios
+
 
     const configuration = {
         endpoint: process.env.REACT_APP_BRXM_ENDPOINT,
         endpointQueryParameter: 'endpoint',
         httpClient: axiosInstance,
         path: `${props.location.pathname}${props.location.search}`,
+
     };
     const mapping = {Banner, Content, 'News List': NewsList, 'Simple Content': Content};
+
 
     return (
         <BrPage configuration={configuration} mapping={mapping}>

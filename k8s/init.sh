@@ -1,0 +1,1 @@
+helm install my-mysql --set auth.username=cms,auth.database=brxm,image.tag=5.7.34 bitnami/mysql

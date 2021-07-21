@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: brxm-spa-next
+  labels:
+    app: brxm-spa-next
+spec:
+  selector:
+    app: brxm-spa-next
+  ports:
+    - name: brxm-spa-next
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

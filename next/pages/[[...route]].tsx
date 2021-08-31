@@ -84,8 +84,6 @@ export const getServerSideProps: GetServerSideProps = async ({
 
     const isCmsRequest = (serverId && token);
 
-    // const cookieString = isCmsRequest && request && request.headers && request.headers.cookie
-
     const axiosConfig = isCmsRequest ? {
         withCredentials: true,
         headers: request

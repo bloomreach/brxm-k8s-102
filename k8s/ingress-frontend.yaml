@@ -14,7 +14,7 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: brxm-spa-next
+                name: frontend-next
                 port:
                   number: 3000
     - host: react.live
@@ -24,6 +24,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: brxm-spa-react
+                name: frontend-react
                 port:
                   number: 3000

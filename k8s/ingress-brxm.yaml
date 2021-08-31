@@ -43,23 +43,3 @@ spec:
                   name: brxm-cms-site
                   port:
                     number: 8080
-    - host: frontend.next.brxm.local
-      http:
-        paths:
-            - path: /
-              pathType: Prefix
-              backend:
-                service:
-                  name: brxm-spa-next
-                  port:
-                    number: 3000
-    - host: frontend.react.brxm.local
-      http:
-        paths:
-            - path: /
-              pathType: Prefix
-              backend:
-                service:
-                  name: brxm-spa-react
-                  port:
-                    number: 3000

@@ -18,6 +18,19 @@ spec:
         - ip: "192.168.64.2"
           hostnames:
             - "brxm.local"
+      initContainers:
+        - name: check-mysql
+          image: busybox
+          env:
+            - name: MYSQL_DB_HOST
+              valueFrom:
+                configMapKeyRef:
+                  key: name
+                  name: my-mysql-variables
+            - name: MYSQL_DB_PORT
+              value: "3306"
+          command: ['sh', '-c', 'echo -e ']
+          args: ['"Checking for the availability of MySQL Server deployment"; while ! nc -z $(MYSQL_DB_HOST) $(MYSQL_DB_PORT); do sleep 1; printf "-"; done; echo -e "  >> MySQL DB Server has started";']
       containers:
         - name: brxm-cms-site
           image: bloomreach/xm-example-k8s-project
@@ -60,6 +73,20 @@ spec:
               value: "256"
             - name: REPO_VERSIONING_BUNDLE_CACHE
               value: "64"
+          livenessProbe:
+            httpGet:
+              path: /site/ping/
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 20
+          readinessProbe:
+            httpGet:
+              path: /site/ping/
+              port: 8080
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            failureThreshold: 20
 ---
 apiVersion: apps/v1
 kind: Deployment

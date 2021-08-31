@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: frontend
+spec:
+  rules:
+    - host: frontend.next.brxm.local
+      http:
+        paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: brxm-spa-next
+                  port:
+                    number: 3000
+    - host: frontend.react.brxm.local
+      http:
+        paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: brxm-spa-react
+                  port:
+                    number: 3000

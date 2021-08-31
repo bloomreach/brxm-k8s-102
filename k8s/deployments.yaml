@@ -91,25 +91,25 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: brxm-spa-next
+  name: frontend-next
   labels:
-    app: brxm-spa-next
+    app: frontend-next
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: brxm-spa-next
+      app: frontend-next
   template:
     metadata:
       labels:
-        app: brxm-spa-next
+        app: frontend-next
     spec:
       hostAliases:
         - ip: "192.168.64.2"
           hostnames:
             - "brxm.local"
       containers:
-        - name: brxm-spa-next
+        - name: frontend-next
           image: bloomreach/xm-next-example
           ports:
             - containerPort: 3000
@@ -117,21 +117,21 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: brxm-spa-react
+  name: frontend-react
   labels:
-    app: brxm-spa-react
+    app: frontend-react
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: brxm-spa-react
+      app: frontend-react
   template:
     metadata:
       labels:
-        app: brxm-spa-react
+        app: frontend-react
     spec:
       containers:
-        - name: brxm-spa-react
+        - name: frontend-react
           image: bloomreach/xm-react-example
           ports:
             - containerPort: 3000

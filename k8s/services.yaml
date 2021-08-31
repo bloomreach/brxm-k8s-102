@@ -16,14 +16,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: brxm-spa-next
+  name: frontend-next
   labels:
-    app: brxm-spa-next
+    app: frontend-next
 spec:
   selector:
-    app: brxm-spa-next
+    app: frontend-next
   ports:
-    - name: brxm-spa-next
+    - name: frontend-next
       protocol: TCP
       port: 3000
       targetPort: 3000
@@ -31,14 +31,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: brxm-spa-react
+  name: frontend-react
   labels:
-    app: brxm-spa-react
+    app: frontend-react
 spec:
   selector:
-    app: brxm-spa-react
+    app: frontend-react
   ports:
-    - name: brxm-spa-react
+    - name: frontend-react
       protocol: TCP
       port: 3000
       targetPort: 3000

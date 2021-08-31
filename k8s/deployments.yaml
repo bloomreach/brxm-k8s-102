@@ -19,10 +19,6 @@ spec:
           hostnames:
             - "brxm.local"
       containers:
-#        - name: brxm-gateway
-#          image: bloomreach/xm-gateway
-#          ports:
-#            - containerPort: 9090
         - name: brxm-cms-site
           image: bloomreach/xm-example-k8s-project
           ports:
@@ -57,10 +53,58 @@ spec:
             - name: REPO_BOOTSTRAP
               value: "true"
             - name: REPO_AUTOEXPORT_ALLOWED
-              value: "true"
+              value: "false"
             - name: REPO_CONFIG
               value: "file:/usr/local/tomcat/conf/repository-mysql.xml"
             - name: REPO_WORKSPACE_BUNDLE_CACHE
               value: "256"
             - name: REPO_VERSIONING_BUNDLE_CACHE
               value: "64"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: brxm-spa-next
+  labels:
+    app: brxm-spa-next
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: brxm-spa-next
+  template:
+    metadata:
+      labels:
+        app: brxm-spa-next
+    spec:
+      hostAliases:
+        - ip: "192.168.64.2"
+          hostnames:
+            - "brxm.local"
+      containers:
+        - name: brxm-spa-next
+          image: bloomreach/xm-next-example
+          ports:
+            - containerPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: brxm-spa-react
+  labels:
+    app: brxm-spa-react
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: brxm-spa-react
+  template:
+    metadata:
+      labels:
+        app: brxm-spa-react
+    spec:
+      containers:
+        - name: brxm-spa-react
+          image: bloomreach/xm-react-example
+          ports:
+            - containerPort: 3000

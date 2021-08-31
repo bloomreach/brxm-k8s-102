@@ -5,8 +5,6 @@ metadata:
     nginx.ingress.kubernetes.io/affinity: "cookie"
     nginx.ingress.kubernetes.io/affinity-mode: "persistent"
     # https://issues.onehippo.com/browse/BRC-2714
-#    nginx.ingress.kubernetes.io/session-cookie-samesite: 'Lax'
-#    nginx.ingress.kubernetes.io/session-cookie-conditional-samesite-none: "false"
     nginx.ingress.kubernetes.io/session-cookie-max-age: "1860"
     nginx.ingress.kubernetes.io/session-cookie-expires: "1860"
     nginx.ingress.kubernetes.io/session-cookie-name: "SERVERID"
@@ -45,7 +43,7 @@ spec:
                   name: brxm-cms-site
                   port:
                     number: 8080
-    - host: frontend.brxm.local
+    - host: frontend.next.brxm.local
       http:
         paths:
             - path: /
@@ -55,10 +53,13 @@ spec:
                   name: brxm-spa-next
                   port:
                     number: 3000
-#            - path: /pma
-#              pathType: Prefix
-#              backend:
-#                service:
-#                  name: brxm-cms-site
-#                  port:
-#                    number: 9090
+    - host: frontend.react.brxm.local
+      http:
+        paths:
+            - path: /
+              pathType: Prefix
+              backend:
+                service:
+                  name: brxm-spa-react
+                  port:
+                    number: 3000

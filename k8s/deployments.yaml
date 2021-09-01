@@ -31,6 +31,13 @@ spec:
               value: "3306"
           command: ['sh', '-c', 'echo -e ']
           args: ['"Checking for the availability of MySQL Server deployment"; while ! nc -z $(MYSQL_DB_HOST) $(MYSQL_DB_PORT); do sleep 1; printf "-"; done; echo -e "  >> MySQL DB Server has started";']
+      volumes:
+        - name: host
+          hostPath:
+            # directory location on host
+            path: /host
+            # this field is optional
+            type: Directory
       containers:
         - name: brxm-cms-site
           image: bloomreach/xm-example-k8s-project
@@ -73,6 +80,11 @@ spec:
               value: "256"
             - name: REPO_VERSIONING_BUNDLE_CACHE
               value: "64"
+            - name: LUCENE_INDEX_FILE_PATH
+              value: /host/index.zip
+          volumeMounts:
+            - mountPath: /host
+              name: host
           livenessProbe:
             httpGet:
               path: /site/ping/

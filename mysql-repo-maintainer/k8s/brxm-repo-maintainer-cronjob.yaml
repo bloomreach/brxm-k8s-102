@@ -1,0 +1,44 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: brxm-repo-maintainer
+spec:
+  schedule: "*/5 * * * *" #every 5 minutes #" 0 */4 * * *" #every 4 hours
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: brxm-repo-maintainer
+          containers:
+            - name: brxm-mysql-repo-maintainer
+              image: bloomreach/xm-mysql-repo-maintainer
+              env:
+                - name: APP_NAMESPACE
+                  valueFrom:
+                    fieldRef:
+                      fieldPath: metadata.namespace
+                - name: BRXM_SELECTOR
+                  value: "app=brxm-cms-site"
+                - name: MYSQL_DB_HOST
+                  valueFrom:
+                    configMapKeyRef:
+                      key: name
+                      name: my-mysql-variables
+                - name: "MYSQL_DB_PORT"
+                  value: "3306"
+                - name: MYSQL_DB_NAME
+                  valueFrom:
+                    configMapKeyRef:
+                      key: mysqlDatabase
+                      name: my-mysql-variables
+                - name: MYSQL_DB_USER
+                  valueFrom:
+                    configMapKeyRef:
+                      key: mysqlUser
+                      name: my-mysql-variables
+                - name: MYSQL_DB_PASSWORD
+                  valueFrom:
+                    secretKeyRef:
+                      key: mysql-password
+                      name: my-mysql
+          restartPolicy: OnFailure

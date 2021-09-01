@@ -1,0 +1,21 @@
+definitions:
+  config:
+    /hst:hst/hst:hosts/dev-brxm/local:
+      .meta:residual-child-node-category: content
+      jcr:primaryType: hst:virtualhost
+      /brxm:
+        .meta:residual-child-node-category: content
+        jcr:primaryType: hst:virtualhost
+        /hst:root:
+          .meta:residual-child-node-category: content
+          jcr:primaryType: hst:mount
+          hst:homepage: root
+          hst:mountpoint: /hst:myproject/hst:sites/myproject
+          hst:pagemodelapi: resourceapi
+          hst:responseheaders: ['Access-Control-Allow-Origin: *', 'Access-Control-Allow-Credentials:
+              true']
+          /next:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:mount
+            hst:mountpoint: /hst:myproject/hst:sites/myproject-next
+            hst:pagemodelapi: resourceapi

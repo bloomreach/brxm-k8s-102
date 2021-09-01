@@ -24,7 +24,7 @@ definitions:
           hippo:identifier: e6e31abf-dbd5-47f4-846d-10ee092ce9a2
           hst:label: Home Page Main
           hst:xtype: hst.vbox
-          hst:lastmodified: 2021-06-29T08:18:08.212+02:00
+          hst:lastmodified: 2021-07-20T14:27:24.936Z
       /pagenotfound:
         jcr:primaryType: hst:containercomponentfolder
         /main:
@@ -41,6 +41,7 @@ definitions:
           hippo:identifier: 8b71b1a4-0f8d-44b0-9af6-61b6b63fb79a
           hst:label: News List Main
           hst:xtype: hst.vbox
+          hst:lastmodified: 2021-07-21T12:56:31.955Z
       /newspage:
         jcr:primaryType: hst:containercomponentfolder
         /main:
@@ -57,6 +58,7 @@ definitions:
           hippo:identifier: d7ec5787-9fdc-4389-bc1d-7d09102eace6
           hst:label: Content List Main
           hst:xtype: hst.vbox
+          hst:lastmodified: 2021-07-19T11:58:52.257Z
       /contentpage:
         jcr:primaryType: hst:containercomponentfolder
         /main:

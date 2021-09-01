@@ -1,0 +1,5 @@
+/hst:hst/hst:configurations/myproject-next/hst:workspace/hst:sitemap/test123:
+  jcr:primaryType: hst:sitemapitem
+  hst:componentconfigurationid: hst:pages/test123-contentpage
+  hst:lastmodified: 2021-07-15T13:03:25.395Z
+  hst:pagetitle: test123

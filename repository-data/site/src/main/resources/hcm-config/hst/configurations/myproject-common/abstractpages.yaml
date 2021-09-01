@@ -1,0 +1,4 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/myproject-common/hst:abstractpages:
+      jcr:primaryType: hst:pages

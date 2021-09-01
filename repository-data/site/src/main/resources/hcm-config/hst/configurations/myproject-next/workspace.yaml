@@ -1,0 +1,76 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/myproject-next/hst:workspace:
+      jcr:primaryType: hst:workspace
+      /hst:containers:
+        jcr:primaryType: hst:containercomponentfolder
+        /base:
+          jcr:primaryType: hst:containercomponentfolder
+          /top:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:containercomponent
+            hippo:identifier: d8e3a571-8d3b-499c-ba4f-cc5a80c46fce
+            hst:label: Top
+            hst:xtype: hst.vbox
+          /footer:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:containercomponent
+            hippo:identifier: 19bcfe81-041d-442c-9a41-7fa2a1b74a9c
+            hst:label: Footer
+            hst:xtype: hst.vbox
+        /homepage:
+          jcr:primaryType: hst:containercomponentfolder
+          /main:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:containercomponent
+            hippo:identifier: e6e31abf-dbd5-47f4-846d-10ee092ce9a2
+            hst:label: Home Page Main
+            hst:lastmodified: 2021-07-20T14:27:24.936Z
+            hst:xtype: hst.vbox
+        /pagenotfound:
+          jcr:primaryType: hst:containercomponentfolder
+          /main:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:containercomponent
+            hippo:identifier: d8a7fcd8-22de-4073-aebc-96e1374b1dc7
+            hst:label: Page-Not-Found Main
+            hst:xtype: hst.vbox
+        /newslist:
+          jcr:primaryType: hst:containercomponentfolder
+          /main:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:containercomponent
+            hippo:identifier: 8b71b1a4-0f8d-44b0-9af6-61b6b63fb79a
+            hst:label: News List Main
+            hst:lastmodified: 2021-07-21T12:56:31.955Z
+            hst:xtype: hst.vbox
+        /newspage:
+          jcr:primaryType: hst:containercomponentfolder
+          /main:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:containercomponent
+            hippo:identifier: c99b52c6-6d79-4945-be51-b97d9e837b8f
+            hst:label: News Page Main
+            hst:xtype: hst.vbox
+        /contentlist:
+          jcr:primaryType: hst:containercomponentfolder
+          /main:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:containercomponent
+            hippo:identifier: d7ec5787-9fdc-4389-bc1d-7d09102eace6
+            hst:label: Content List Main
+            hst:lastmodified: 2021-07-19T11:58:52.257Z
+            hst:xtype: hst.vbox
+        /contentpage:
+          jcr:primaryType: hst:containercomponentfolder
+          /main:
+            .meta:residual-child-node-category: content
+            jcr:primaryType: hst:containercomponent
+            hippo:identifier: 531fa76c-d009-4658-9435-911a32e2ab0c
+            hst:label: Content Page Main
+            hst:xtype: hst.vbox
+      /hst:sitemenus:
+        jcr:primaryType: hst:sitemenus
+        /main:
+          .meta:residual-child-node-category: content
+          jcr:primaryType: hst:sitemenu

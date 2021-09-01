@@ -1,0 +1,9 @@
+/hst:hst/hst:configurations/myproject-next/hst:workspace/hst:containers/newslist/main/newslist:
+  jcr:primaryType: hst:containeritemcomponent
+  hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsNewsComponent
+  hst:label: News List
+  hst:parameternames: [path, hidePastEvents, hideFutureItems, documentDateField, documentTypes,
+    sortOrder, sortField, pageSize, showPagination, includeSubtypes, org.hippoecm.hst.core.component.template]
+  hst:parametervalues: ['', 'on', 'on', 'myproject:date', 'myproject:newsdocument',
+    asc, '', '4', 'on', 'off', 'webfile:/freemarker/hstdefault/newslist-main-newslist/variant.ftl']
+  hst:template: newslist-main-newslist

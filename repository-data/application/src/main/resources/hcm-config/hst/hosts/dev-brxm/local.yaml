@@ -1,0 +1,10 @@
+definitions:
+  config:
+    /hst:platform/hst:hosts/dev-brxm/local:
+      jcr:primaryType: hst:virtualhost
+      /brxm:
+        jcr:primaryType: hst:virtualhost
+        /hst:root:
+          jcr:primaryType: hst:mount
+          hst:ismapped: false
+          hst:namedpipeline: WebApplicationInvokingPipeline

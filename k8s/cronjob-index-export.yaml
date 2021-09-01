@@ -1,0 +1,32 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: index-export
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          hostAliases:
+            - ip: "192.168.64.2"
+              hostnames:
+                - "brxm.local"
+          containers:
+            - name: index-export
+              image: busybox
+              command:
+                - /bin/sh
+                - -c
+              args: ["[ -f /host/index.zip ] && mv /host/index.zip /host/$(date +%F-%H:%M)-index.zip; wget -O /host/index.zip http://brxm.local/cms/ws/indexexport --header=\"Authorization: Basic YWRtaW46YWRtaW4=\""]
+              volumeMounts:
+                - mountPath: /host
+                  name: host
+          restartPolicy: OnFailure
+          volumes:
+            - name: host
+              hostPath:
+                # directory location on host
+                path: /host
+                # this field is optional
+                type: Directory

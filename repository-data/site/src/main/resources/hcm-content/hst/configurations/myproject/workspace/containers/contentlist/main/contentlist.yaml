@@ -1,4 +1,5 @@
 /hst:hst/hst:configurations/myproject/hst:workspace/hst:containers/contentlist/main/contentlist:
+  .meta:order-before: banner
   jcr:primaryType: hst:containeritemcomponent
   hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsListComponent
   hst:label: Content list

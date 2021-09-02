@@ -1,6 +1,6 @@
 # 101: BrXM up and running
 
-## MYSQL:
+## MYSQL Database:
 
 `bash mysql-heml-install.sh ` 
 
@@ -23,6 +23,7 @@
 ## INGRESS:
 
 `kubectl create -f ingress-brxm.yaml`
+
 `kubectl create -f ingress-frontend.yaml`
 
 # 102 Index Export / Import & Repository Maintenance
@@ -34,6 +35,7 @@
 ## REPOSITORY MAINTENANCE
 
 `bash repository-maintenance/setup-serviceaccount.sh`
+
 `kubectl create -f cronjob-repository-maintenance.yaml`
 
 

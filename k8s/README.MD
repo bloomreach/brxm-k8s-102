@@ -12,9 +12,13 @@
 
 `kubectl create -f services.yaml`
 
-## BRXM & Frontend:
+## BRXM deployment:
 
-`kubectl create -f deployments.yaml`
+`kubectl create -f deployment-brxm.yaml`
+
+## Frontend deployments:
+
+`kubectl create -f deployments-frontend.yaml`
 
 ## INGRESS:
 

@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: index-export
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "*/5 * * * *" #every 5 minutes (only to be used locally)
   jobTemplate:
     spec:
       template:
